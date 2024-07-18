@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/BackToTopButton.css"; // You can create this CSS file for styling
+import "../styles/BackToTopButton.css";
 import { BiUpArrow } from "react-icons/bi";
 
 const BackToTopButton = () => {

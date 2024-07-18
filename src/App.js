@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { isMobile } from "react-device-detect";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,7 +12,28 @@ import Login from "./components/login";
 import "./styles/style.css";
 
 function App() {
+  // State to manage login status
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Check if the user is accessing from a mobile device
+  if (isMobile) {
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          padding: "20px",
+          color: "#000",
+          fontSize: "20px",
+          fontWeight: "bold",
+          border: "none",
+        }}
+      >
+        <p>
+          This site is optimized for desktop. Some features may not work
+          optimally on mobile devices.
+        </p>
+      </div>
+    );
+  }
 
   // Function to handle login
   const handleLogin = () => {
@@ -29,7 +51,7 @@ function App() {
           ) : (
             <Route path="/anime" element={<Navigate to="/login" />} />
           )}
-          <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path="/*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </div>
     </Router>
