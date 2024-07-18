@@ -12,9 +12,8 @@ import Login from "./components/login";
 import "./styles/style.css";
 
 function App() {
-  // State to manage login status
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // Check if the user is accessing from a mobile device
+
   if (isMobile) {
     return (
       <div
@@ -22,6 +21,10 @@ function App() {
           textAlign: "center",
           padding: "20px",
           color: "#000",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           fontSize: "20px",
           fontWeight: "bold",
           border: "none",
